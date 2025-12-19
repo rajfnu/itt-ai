@@ -100,21 +100,21 @@ Backend will be available at: **http://localhost:4000**
 ## Demo Credentials
 
 ### C-Level Executives (Full Access)
-| Role | Email | Password |
-|------|-------|----------|
-| CEO | ceo@intimetec.com | demo123 |
-| CIO | cio@intimetec.com | demo123 |
-| COO | coo@intimetec.com | demo123 |
+| Role | Name | Email | Password |
+|------|------|-------|----------|
+| CEO | Jeet Kumar | ceo@intimetec.com | demo123 |
+| CTO | Rakesh Gupta | cio@intimetec.com | demo123 |
+| CFO | Tapish Rathore | cfo@intimetec.com | demo123 |
 
 ### Department Staff
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@intimetec.com | demo123 |
-| HR Staff | hr@intimetec.com | demo123 |
-| Finance | finance@intimetec.com | demo123 |
-| Marketing | marketing@intimetec.com | demo123 |
-| Sales | sales@intimetec.com | demo123 |
-| Engineer | dev@intimetec.com | demo123 |
+| Role | Name | Email | Password |
+|------|------|-------|----------|
+| Admin | Admin User | admin@intimetec.com | demo123 |
+| HR Head | Khushbu Jain | hr@intimetec.com | demo123 |
+| Finance | Tapish Rathore | finance@intimetec.com | demo123 |
+| Marketing | Priya Sharma | marketing@intimetec.com | demo123 |
+| Sales | Amit Gupta | sales@intimetec.com | demo123 |
+| Engineer | Rajeev Kumar | dev@intimetec.com | demo123 |
 
 ## Features
 

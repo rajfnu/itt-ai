@@ -38,18 +38,18 @@ class AgentResponse(BaseModel):
     timestamp: str = Field(default_factory=lambda: datetime.now().isoformat())
 
 
-# Mock Data
+# Mock Data - InTimeTec Leadership & Staff
 MOCK_USERS: List[User] = [
     User(id="1", name="Admin User", email="admin@intimetec.com", role="admin", department="Administration", avatar="/avatars/admin.png"),
-    User(id="2", name="Sarah Johnson", email="hr@intimetec.com", role="hr_staff", department="Human Resources", avatar="/avatars/hr.png"),
-    User(id="3", name="Mike Chen", email="finance@intimetec.com", role="finance_staff", department="Finance", avatar="/avatars/finance.png"),
-    User(id="4", name="Alex Developer", email="dev@intimetec.com", role="engineer", department="Engineering", avatar="/avatars/dev.png"),
-    User(id="5", name="Lisa Martinez", email="marketing@intimetec.com", role="marketing_staff", department="Marketing", avatar="/avatars/marketing.png"),
-    User(id="6", name="James Wilson", email="sales@intimetec.com", role="sales_staff", department="Sales", avatar="/avatars/sales.png"),
-    # C-Level Executives
-    User(id="7", name="Robert Thompson", email="ceo@intimetec.com", role="ceo", department="Executive", avatar="/avatars/ceo.png"),
-    User(id="8", name="Patricia Williams", email="cio@intimetec.com", role="cio", department="Executive", avatar="/avatars/cio.png"),
-    User(id="9", name="David Anderson", email="coo@intimetec.com", role="coo", department="Executive", avatar="/avatars/coo.png"),
+    User(id="2", name="Khushbu Jain", email="hr@intimetec.com", role="hr_staff", department="Human Resources", avatar="/avatars/hr.png"),
+    User(id="3", name="Tapish Rathore", email="finance@intimetec.com", role="finance_staff", department="Finance", avatar="/avatars/finance.png"),
+    User(id="4", name="Rajeev Kumar", email="dev@intimetec.com", role="engineer", department="Engineering", avatar="/avatars/dev.png"),
+    User(id="5", name="Priya Sharma", email="marketing@intimetec.com", role="marketing_staff", department="Marketing", avatar="/avatars/marketing.png"),
+    User(id="6", name="Amit Gupta", email="sales@intimetec.com", role="sales_staff", department="Sales", avatar="/avatars/sales.png"),
+    # C-Level Executives - InTimeTec Leadership
+    User(id="7", name="Jeet Kumar", email="ceo@intimetec.com", role="ceo", department="Executive", avatar="/avatars/ceo.png"),
+    User(id="8", name="Rakesh Gupta", email="cio@intimetec.com", role="cio", department="Executive", avatar="/avatars/cio.png"),
+    User(id="9", name="Tapish Rathore", email="cfo@intimetec.com", role="coo", department="Executive", avatar="/avatars/cfo.png"),
 ]
 
 

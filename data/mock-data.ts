@@ -1,6 +1,6 @@
 import { User, AIAgent, NavItem } from '@/types';
 
-// Mock Users
+// Mock Users - InTimeTec Leadership & Staff
 export const mockUsers: User[] = [
   {
     id: '1',
@@ -12,7 +12,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '2',
-    name: 'Sarah Johnson',
+    name: 'Khushbu Jain',
     email: 'hr@intimetec.com',
     role: 'hr_staff',
     department: 'Human Resources',
@@ -20,7 +20,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '3',
-    name: 'Mike Chen',
+    name: 'Tapish Rathore',
     email: 'finance@intimetec.com',
     role: 'finance_staff',
     department: 'Finance',
@@ -28,7 +28,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '4',
-    name: 'Alex Developer',
+    name: 'Rajeev Kumar',
     email: 'dev@intimetec.com',
     role: 'engineer',
     department: 'Engineering',
@@ -36,7 +36,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '5',
-    name: 'Lisa Martinez',
+    name: 'Priya Sharma',
     email: 'marketing@intimetec.com',
     role: 'marketing_staff',
     department: 'Marketing',
@@ -44,16 +44,16 @@ export const mockUsers: User[] = [
   },
   {
     id: '6',
-    name: 'James Wilson',
+    name: 'Amit Gupta',
     email: 'sales@intimetec.com',
     role: 'sales_staff',
     department: 'Sales',
     avatar: '/avatars/sales.png'
   },
-  // C-Level Executives
+  // C-Level Executives - InTimeTec Leadership
   {
     id: '7',
-    name: 'Robert Thompson',
+    name: 'Jeet Kumar',
     email: 'ceo@intimetec.com',
     role: 'ceo',
     department: 'Executive',
@@ -61,7 +61,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '8',
-    name: 'Patricia Williams',
+    name: 'Rakesh Gupta',
     email: 'cio@intimetec.com',
     role: 'cio',
     department: 'Executive',
@@ -69,11 +69,11 @@ export const mockUsers: User[] = [
   },
   {
     id: '9',
-    name: 'David Anderson',
-    email: 'coo@intimetec.com',
+    name: 'Tapish Rathore',
+    email: 'cfo@intimetec.com',
     role: 'coo',
     department: 'Executive',
-    avatar: '/avatars/coo.png'
+    avatar: '/avatars/cfo.png'
   },
 ];
 
