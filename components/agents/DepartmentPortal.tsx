@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { AIAgent } from '@/types';
+import { AIAgent, UserRole } from '@/types';
 import { AgentChat } from './AgentChat';
 import {
   Bot,
@@ -68,6 +68,7 @@ interface DepartmentPortalProps {
   description: string;
   agents: AIAgent[];
   accentColor?: string;
+  userRole?: UserRole;
 }
 
 export function DepartmentPortal({
@@ -75,6 +76,7 @@ export function DepartmentPortal({
   description,
   agents,
   accentColor = 'primary',
+  userRole,
 }: DepartmentPortalProps) {
   const [selectedAgent, setSelectedAgent] = useState<AIAgent | null>(null);
 
@@ -90,7 +92,7 @@ export function DepartmentPortal({
   if (selectedAgent) {
     return (
       <div className="space-y-4">
-        <AgentChat agent={selectedAgent} onBack={() => setSelectedAgent(null)} />
+        <AgentChat agent={selectedAgent} onBack={() => setSelectedAgent(null)} userRole={userRole} />
       </div>
     );
   }

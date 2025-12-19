@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { AIAgent, ChatMessage, AgentResponse } from '@/types';
+import { AIAgent, ChatMessage, AgentResponse, UserRole } from '@/types';
+import { executivePrompts } from '@/data/mock-data';
 import {
   Send,
   Bot,
@@ -25,6 +26,7 @@ import { agentApi } from '@/lib/api';
 interface AgentChatProps {
   agent: AIAgent;
   onBack: () => void;
+  userRole?: UserRole;
 }
 
 const statusConfig = {
@@ -35,7 +37,18 @@ const statusConfig = {
   error: { icon: RefreshCw, text: 'Error', color: 'text-red-500' },
 };
 
-export function AgentChat({ agent, onBack }: AgentChatProps) {
+// Map agent categories to executive prompt keys
+const getExecutivePromptKey = (agent: AIAgent): string | null => {
+  const agentId = agent.id.toLowerCase();
+  if (agentId.includes('finance') || agentId.includes('invoice') || agentId.includes('expense') || agentId.includes('budget') || agentId.includes('payroll') || agentId.includes('report')) return 'finance';
+  if (agentId.includes('sales') || agentId.includes('rfp') || agentId.includes('deck') || agentId.includes('capabilities') || agentId.includes('coach')) return 'sales';
+  if (agentId.includes('hr') || agentId.includes('onboarding') || agentId.includes('leave') || agentId.includes('performance') || agentId.includes('recruitment') || agentId.includes('policy')) return 'hr';
+  if (agentId.includes('marketing') || agentId.includes('leads') || agentId.includes('campaign') || agentId.includes('content') || agentId.includes('social') || agentId.includes('analytics')) return 'marketing';
+  if (agentId.includes('eng') || agentId.includes('training') || agentId.includes('knowledge') || agentId.includes('code') || agentId.includes('architecture') || agentId.includes('devops')) return 'engineering';
+  return null;
+};
+
+export function AgentChat({ agent, onBack, userRole }: AgentChatProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +56,23 @@ export function AgentChat({ agent, onBack }: AgentChatProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Get suggested prompts - use executive prompts for C-level, otherwise agent defaults
+  const getSuggestedPrompts = (): string[] => {
+    if (userRole && ['ceo', 'cio', 'coo'].includes(userRole)) {
+      const execRole = userRole as 'ceo' | 'cio' | 'coo';
+      const promptKey = getExecutivePromptKey(agent);
+      if (promptKey && executivePrompts[execRole]) {
+        const rolePrompts = executivePrompts[execRole] as Record<string, string[]>;
+        if (rolePrompts[promptKey]) {
+          return rolePrompts[promptKey];
+        }
+      }
+    }
+    return agent.suggestedPrompts;
+  };
+
+  const suggestedPrompts = getSuggestedPrompts();
 
   // Add greeting message on mount
   useEffect(() => {
@@ -307,7 +337,7 @@ export function AgentChat({ agent, onBack }: AgentChatProps) {
             Try asking:
           </p>
           <div className="flex flex-wrap gap-2">
-            {agent.suggestedPrompts.slice(0, 4).map((prompt, index) => (
+            {suggestedPrompts.slice(0, 4).map((prompt, index) => (
               <Button
                 key={index}
                 variant="outline"

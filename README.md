@@ -99,6 +99,14 @@ Backend will be available at: **http://localhost:4000**
 
 ## Demo Credentials
 
+### C-Level Executives (Full Access)
+| Role | Email | Password |
+|------|-------|----------|
+| CEO | ceo@intimetec.com | demo123 |
+| CIO | cio@intimetec.com | demo123 |
+| COO | coo@intimetec.com | demo123 |
+
+### Department Staff
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@intimetec.com | demo123 |
@@ -106,7 +114,7 @@ Backend will be available at: **http://localhost:4000**
 | Finance | finance@intimetec.com | demo123 |
 | Marketing | marketing@intimetec.com | demo123 |
 | Sales | sales@intimetec.com | demo123 |
-| Engineer | engineer@intimetec.com | demo123 |
+| Engineer | dev@intimetec.com | demo123 |
 
 ## Features
 
@@ -150,12 +158,23 @@ Backend will be available at: **http://localhost:4000**
 ### Role-Based Access Control (RBAC)
 
 Each user role has access to specific departments:
+- **CEO/CIO/COO**: All departments with executive-focused prompts
 - **Admin**: All departments
 - **HR Staff**: HR department
 - **Finance Staff**: Finance department
 - **Marketing Staff**: Marketing department
 - **Sales Staff**: Sales department
 - **Engineer**: Engineering department
+
+### Executive Features
+
+C-level executives (CEO, CIO, COO) get:
+- **Executive Dashboard** with company-wide KPIs
+- **Access to all department portals**
+- **Executive-specific NLP prompts** tailored to each role:
+  - CEO: Strategic & business performance queries
+  - CIO: Technology & infrastructure queries
+  - COO: Operations & efficiency queries
 
 ## API Documentation
 

@@ -8,7 +8,7 @@ class User(BaseModel):
     id: str
     name: str
     email: str
-    role: Literal["admin", "hr_staff", "finance_staff", "engineer", "marketing_staff", "sales_staff"]
+    role: Literal["admin", "ceo", "cio", "coo", "hr_staff", "finance_staff", "engineer", "marketing_staff", "sales_staff"]
     department: str
     avatar: Optional[str] = None
 
@@ -46,6 +46,10 @@ MOCK_USERS: List[User] = [
     User(id="4", name="Alex Developer", email="dev@intimetec.com", role="engineer", department="Engineering", avatar="/avatars/dev.png"),
     User(id="5", name="Lisa Martinez", email="marketing@intimetec.com", role="marketing_staff", department="Marketing", avatar="/avatars/marketing.png"),
     User(id="6", name="James Wilson", email="sales@intimetec.com", role="sales_staff", department="Sales", avatar="/avatars/sales.png"),
+    # C-Level Executives
+    User(id="7", name="Robert Thompson", email="ceo@intimetec.com", role="ceo", department="Executive", avatar="/avatars/ceo.png"),
+    User(id="8", name="Patricia Williams", email="cio@intimetec.com", role="cio", department="Executive", avatar="/avatars/cio.png"),
+    User(id="9", name="David Anderson", email="coo@intimetec.com", role="coo", department="Executive", avatar="/avatars/coo.png"),
 ]
 
 

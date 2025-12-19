@@ -27,6 +27,7 @@ import {
   ChevronRight,
   Briefcase,
   Code,
+  Crown,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -37,6 +38,7 @@ const iconMap: Record<string, React.ElementType> = {
   UserCircle,
   Briefcase,
   Code,
+  Crown,
 };
 
 export default function DashboardLayout({

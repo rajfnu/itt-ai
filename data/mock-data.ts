@@ -50,7 +50,132 @@ export const mockUsers: User[] = [
     department: 'Sales',
     avatar: '/avatars/sales.png'
   },
+  // C-Level Executives
+  {
+    id: '7',
+    name: 'Robert Thompson',
+    email: 'ceo@intimetec.com',
+    role: 'ceo',
+    department: 'Executive',
+    avatar: '/avatars/ceo.png'
+  },
+  {
+    id: '8',
+    name: 'Patricia Williams',
+    email: 'cio@intimetec.com',
+    role: 'cio',
+    department: 'Executive',
+    avatar: '/avatars/cio.png'
+  },
+  {
+    id: '9',
+    name: 'David Anderson',
+    email: 'coo@intimetec.com',
+    role: 'coo',
+    department: 'Executive',
+    avatar: '/avatars/coo.png'
+  },
 ];
+
+// Executive Suggested Prompts by Role
+export const executivePrompts = {
+  ceo: {
+    finance: [
+      "What's our current burn rate and runway?",
+      "Show me the Q4 P&L summary",
+      "What's our revenue growth compared to last quarter?",
+      "Give me an executive summary of our financial health"
+    ],
+    sales: [
+      "What's our total pipeline value for next quarter?",
+      "Show me our win rate trends this year",
+      "Which deals are at risk of slipping?",
+      "What's our average deal size trend?"
+    ],
+    hr: [
+      "What's our current headcount and attrition rate?",
+      "Show me hiring progress against plan",
+      "What's the status of our leadership positions?",
+      "Give me an overview of employee satisfaction"
+    ],
+    marketing: [
+      "What's our customer acquisition cost trend?",
+      "Show me brand awareness metrics",
+      "How is our market positioning versus competitors?",
+      "What's the ROI on our marketing spend?"
+    ],
+    engineering: [
+      "What's the status of our key product initiatives?",
+      "Show me our technical debt overview",
+      "Are we on track for the next release?",
+      "What's our platform uptime and reliability?"
+    ]
+  },
+  cio: {
+    engineering: [
+      "What's the status of our cloud migration?",
+      "Show me our system architecture overview",
+      "What are the current security vulnerabilities?",
+      "Give me an infrastructure cost analysis"
+    ],
+    devops: [
+      "What are the current deployment blockers?",
+      "Show me our CI/CD pipeline health",
+      "What's our mean time to recovery?",
+      "Are there any critical infrastructure issues?"
+    ],
+    knowledge: [
+      "How does our authentication system work?",
+      "What's our data backup strategy?",
+      "Show me our API documentation status",
+      "What are our technology standards?"
+    ],
+    codeReview: [
+      "Run a security scan on the latest release",
+      "What's our code quality trend?",
+      "Show me critical bugs in production",
+      "What's the technical debt in our core systems?"
+    ],
+    architecture: [
+      "Review our microservices architecture",
+      "What's our disaster recovery plan?",
+      "How scalable is our current infrastructure?",
+      "Evaluate our vendor dependencies"
+    ]
+  },
+  coo: {
+    hr: [
+      "Show me pending onboarding tasks",
+      "What's our recruitment pipeline status?",
+      "Are there any compliance issues?",
+      "What's our training completion rate?"
+    ],
+    finance: [
+      "What are our pending expense approvals?",
+      "Show me department budget utilization",
+      "What's our vendor payment status?",
+      "Are there any budget overruns?"
+    ],
+    operations: [
+      "What's our remote work policy?",
+      "Show me operational efficiency metrics",
+      "What processes need improvement?",
+      "Are there any bottlenecks in our workflows?"
+    ],
+    marketing: [
+      "What's our marketing ROI this quarter?",
+      "Show me campaign performance overview",
+      "How are our lead generation efforts?",
+      "What's our content pipeline status?"
+    ],
+    sales: [
+      "What's our sales team performance?",
+      "Show me our RFP win rate",
+      "Are we meeting our quarterly targets?",
+      "What's the status of key accounts?"
+    ]
+  }
+};
 
 // HR Department Agents
 export const hrAgents: AIAgent[] = [
@@ -59,7 +184,7 @@ export const hrAgents: AIAgent[] = [
     name: 'Onboarding Assistant',
     description: 'Automate new hire onboarding process, generate welcome packets, and track onboarding progress',
     endpoint: '/api/hr/onboarding',
-    allowedRoles: ['admin', 'hr_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR',
     icon: 'UserPlus',
     category: 'Recruitment',
@@ -83,7 +208,7 @@ export const hrAgents: AIAgent[] = [
     name: 'Leave Manager',
     description: 'Process leave requests, check leave balances, and manage time-off policies',
     endpoint: '/api/hr/leave',
-    allowedRoles: ['admin', 'hr_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR',
     icon: 'Calendar',
     category: 'Employee Management',
@@ -107,7 +232,7 @@ export const hrAgents: AIAgent[] = [
     name: 'Performance Coach',
     description: 'Generate performance review templates, track goals, and compile feedback reports',
     endpoint: '/api/hr/performance',
-    allowedRoles: ['admin', 'hr_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR',
     icon: 'TrendingUp',
     category: 'Performance',
@@ -131,7 +256,7 @@ export const hrAgents: AIAgent[] = [
     name: 'Recruitment Agent',
     description: 'Screen resumes, schedule interviews, and generate job descriptions',
     endpoint: '/api/hr/recruitment',
-    allowedRoles: ['admin', 'hr_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR',
     icon: 'Search',
     category: 'Recruitment',
@@ -155,7 +280,7 @@ export const hrAgents: AIAgent[] = [
     name: 'Policy Assistant',
     description: 'Answer employee policy questions, generate policy documents, and track compliance',
     endpoint: '/api/hr/policy',
-    allowedRoles: ['admin', 'hr_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR',
     icon: 'FileText',
     category: 'Compliance',
@@ -183,7 +308,7 @@ export const financeAgents: AIAgent[] = [
     name: 'Invoice Agent',
     description: 'Process invoices, validate vendor details, and manage payments through natural conversation',
     endpoint: '/api/finance/invoice',
-    allowedRoles: ['admin', 'finance_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance',
     icon: 'Receipt',
     category: 'Accounts Payable',
@@ -209,7 +334,7 @@ export const financeAgents: AIAgent[] = [
     name: 'Expense Manager',
     description: 'Review expense reports, categorize spending, and generate expense analytics',
     endpoint: '/api/finance/expense',
-    allowedRoles: ['admin', 'finance_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance',
     icon: 'CreditCard',
     category: 'Expenses',
@@ -234,7 +359,7 @@ export const financeAgents: AIAgent[] = [
     name: 'Budget Analyst',
     description: 'Track budget allocations, forecast spending, and generate budget reports',
     endpoint: '/api/finance/budget',
-    allowedRoles: ['admin', 'finance_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance',
     icon: 'PieChart',
     category: 'Budgeting',
@@ -259,7 +384,7 @@ export const financeAgents: AIAgent[] = [
     name: 'Payroll Assistant',
     description: 'Process payroll calculations, generate pay stubs, and handle tax withholdings',
     endpoint: '/api/finance/payroll',
-    allowedRoles: ['admin', 'finance_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance',
     icon: 'DollarSign',
     category: 'Payroll',
@@ -284,7 +409,7 @@ export const financeAgents: AIAgent[] = [
     name: 'Financial Reporter',
     description: 'Generate P&L statements, balance sheets, and cash flow reports',
     endpoint: '/api/finance/report',
-    allowedRoles: ['admin', 'finance_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance',
     icon: 'BarChart',
     category: 'Reporting',
@@ -313,7 +438,7 @@ export const marketingAgents: AIAgent[] = [
     name: 'Lead Generator',
     description: 'Create and qualify leads, score prospects, and manage lead pipeline',
     endpoint: '/api/marketing/leads',
-    allowedRoles: ['admin', 'marketing_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing',
     icon: 'Target',
     category: 'Lead Generation',
@@ -338,7 +463,7 @@ export const marketingAgents: AIAgent[] = [
     name: 'Campaign Manager',
     description: 'Plan campaigns, schedule content, and track campaign performance',
     endpoint: '/api/marketing/campaign',
-    allowedRoles: ['admin', 'marketing_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing',
     icon: 'Megaphone',
     category: 'Campaigns',
@@ -363,7 +488,7 @@ export const marketingAgents: AIAgent[] = [
     name: 'Content Creator',
     description: 'Generate blog posts, social media content, and email copy using AI',
     endpoint: '/api/marketing/content',
-    allowedRoles: ['admin', 'marketing_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing',
     icon: 'Edit',
     category: 'Content',
@@ -388,7 +513,7 @@ export const marketingAgents: AIAgent[] = [
     name: 'Social Media Agent',
     description: 'Schedule posts, analyze engagement, and manage social presence',
     endpoint: '/api/marketing/social',
-    allowedRoles: ['admin', 'marketing_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing',
     icon: 'Share2',
     category: 'Social Media',
@@ -413,7 +538,7 @@ export const marketingAgents: AIAgent[] = [
     name: 'Marketing Analyst',
     description: 'Generate marketing reports, track KPIs, and analyze ROI',
     endpoint: '/api/marketing/analytics',
-    allowedRoles: ['admin', 'marketing_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing',
     icon: 'LineChart',
     category: 'Analytics',
@@ -442,7 +567,7 @@ export const salesAgents: AIAgent[] = [
     name: 'Capabilities Expert',
     description: 'Know everything about our products, services, and capabilities to help answer client questions',
     endpoint: '/api/sales/capabilities',
-    allowedRoles: ['admin', 'sales_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales',
     icon: 'Lightbulb',
     category: 'Knowledge',
@@ -467,7 +592,7 @@ export const salesAgents: AIAgent[] = [
     name: 'Deck Builder',
     description: 'Create compelling sales presentations and pitch decks tailored to client needs',
     endpoint: '/api/sales/deck',
-    allowedRoles: ['admin', 'sales_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales',
     icon: 'Presentation',
     category: 'Presentations',
@@ -492,7 +617,7 @@ export const salesAgents: AIAgent[] = [
     name: 'RFP Responder',
     description: 'Analyze RFPs, generate responses, and manage proposal content',
     endpoint: '/api/sales/rfp',
-    allowedRoles: ['admin', 'sales_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales',
     icon: 'FileSearch',
     category: 'Proposals',
@@ -517,7 +642,7 @@ export const salesAgents: AIAgent[] = [
     name: 'RFP Hunter',
     description: 'Search for relevant RFPs in the market, track opportunities, and alert on matches',
     endpoint: '/api/sales/rfp-search',
-    allowedRoles: ['admin', 'sales_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales',
     icon: 'Radar',
     category: 'Prospecting',
@@ -542,7 +667,7 @@ export const salesAgents: AIAgent[] = [
     name: 'Sales Coach',
     description: 'Provide sales guidance, objection handling, and deal strategy advice',
     endpoint: '/api/sales/coach',
-    allowedRoles: ['admin', 'sales_staff'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales',
     icon: 'Sparkles',
     category: 'Coaching',
@@ -571,7 +696,7 @@ export const engineeringAgents: AIAgent[] = [
     name: 'Training Assistant',
     description: 'Access learning resources, track certifications, and get personalized learning paths',
     endpoint: '/api/engineering/training',
-    allowedRoles: ['admin', 'engineer'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering',
     icon: 'GraduationCap',
     category: 'Learning',
@@ -596,7 +721,7 @@ export const engineeringAgents: AIAgent[] = [
     name: 'Knowledge Base',
     description: 'Search internal documentation, code examples, and best practices using RAG',
     endpoint: '/api/engineering/knowledge',
-    allowedRoles: ['admin', 'engineer'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering',
     icon: 'BookOpen',
     category: 'Documentation',
@@ -621,7 +746,7 @@ export const engineeringAgents: AIAgent[] = [
     name: 'Code Reviewer',
     description: 'Analyze code for issues, suggest improvements, and enforce coding standards',
     endpoint: '/api/engineering/code-review',
-    allowedRoles: ['admin', 'engineer'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering',
     icon: 'Code',
     category: 'Quality',
@@ -646,7 +771,7 @@ export const engineeringAgents: AIAgent[] = [
     name: 'Architecture Advisor',
     description: 'Get guidance on system design, technology choices, and architectural patterns',
     endpoint: '/api/engineering/architecture',
-    allowedRoles: ['admin', 'engineer'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering',
     icon: 'Boxes',
     category: 'Design',
@@ -671,7 +796,7 @@ export const engineeringAgents: AIAgent[] = [
     name: 'DevOps Helper',
     description: 'Troubleshoot deployments, manage infrastructure, and automate pipelines',
     endpoint: '/api/engineering/devops',
-    allowedRoles: ['admin', 'engineer'],
+    allowedRoles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering',
     icon: 'Server',
     category: 'Infrastructure',
@@ -705,6 +830,12 @@ export const mockAgents: AIAgent[] = [
 // Navigation Items
 export const navigationItems: NavItem[] = [
   {
+    title: 'Executive Dashboard',
+    href: '/executive',
+    icon: 'Crown',
+    roles: ['ceo', 'cio', 'coo']
+  },
+  {
     title: 'Admin Dashboard',
     href: '/admin',
     icon: 'Settings',
@@ -714,42 +845,42 @@ export const navigationItems: NavItem[] = [
     title: 'HR Portal',
     href: '/hr',
     icon: 'Users',
-    roles: ['admin', 'hr_staff'],
+    roles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff'],
     department: 'HR'
   },
   {
     title: 'Finance Portal',
     href: '/finance',
     icon: 'DollarSign',
-    roles: ['admin', 'finance_staff'],
+    roles: ['admin', 'ceo', 'cio', 'coo', 'finance_staff'],
     department: 'Finance'
   },
   {
     title: 'Marketing Portal',
     href: '/marketing',
     icon: 'Megaphone',
-    roles: ['admin', 'marketing_staff'],
+    roles: ['admin', 'ceo', 'cio', 'coo', 'marketing_staff'],
     department: 'Marketing'
   },
   {
     title: 'Sales Portal',
     href: '/sales',
     icon: 'Briefcase',
-    roles: ['admin', 'sales_staff'],
+    roles: ['admin', 'ceo', 'cio', 'coo', 'sales_staff'],
     department: 'Sales'
   },
   {
     title: 'Engineering Hub',
     href: '/engineering',
     icon: 'Code',
-    roles: ['admin', 'engineer'],
+    roles: ['admin', 'ceo', 'cio', 'coo', 'engineer'],
     department: 'Engineering'
   },
   {
     title: 'Employee Directory',
     href: '/employees',
     icon: 'UserCircle',
-    roles: ['admin', 'hr_staff', 'engineer', 'finance_staff', 'marketing_staff', 'sales_staff']
+    roles: ['admin', 'ceo', 'cio', 'coo', 'hr_staff', 'engineer', 'finance_staff', 'marketing_staff', 'sales_staff']
   },
 ];
 

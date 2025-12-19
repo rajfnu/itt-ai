@@ -1,6 +1,6 @@
-export type UserRole = 'admin' | 'hr_staff' | 'finance_staff' | 'engineer' | 'marketing_staff' | 'sales_staff';
+export type UserRole = 'admin' | 'ceo' | 'cio' | 'coo' | 'hr_staff' | 'finance_staff' | 'engineer' | 'marketing_staff' | 'sales_staff';
 
-export type Department = 'Administration' | 'Human Resources' | 'Finance' | 'Marketing' | 'Engineering' | 'Sales';
+export type Department = 'Administration' | 'Executive' | 'Human Resources' | 'Finance' | 'Marketing' | 'Engineering' | 'Sales';
 
 export interface User {
   id: string;
