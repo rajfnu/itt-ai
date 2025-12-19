@@ -102,19 +102,24 @@ Backend will be available at: **http://localhost:4000**
 ### C-Level Executives (Full Access)
 | Role | Name | Email | Password |
 |------|------|-------|----------|
-| CEO | Jeet Kumar | ceo@intimetec.com | demo123 |
-| CTO | Rakesh Gupta | cio@intimetec.com | demo123 |
-| CFO | Tapish Rathore | cfo@intimetec.com | demo123 |
+| CEO | Jeet Kumar | jeet.kumar@intimetec.com | demo123 |
+| CTO | Rakesh Sawan | rakesh.sawan@intimetec.com | demo123 |
+| MD | Sandeep Jain | sandeep.jain@intimetec.com | demo123 |
+| EVP | Dan Puga | dan.puga@intimetec.com | demo123 |
+| EVP | Matt Fratzke | matt.fratzke@intimetec.com | demo123 |
+| VP Tech | Cody Erben | cody.erben@intimetec.com | demo123 |
+| CTO ANZ | Rajeev Kumar | rajeev.kumar@intimetec.com | demo123 |
+| MD ANZ | Venkatesh Bachu | venkatesh.bachu@intimetec.com | demo123 |
 
 ### Department Staff
 | Role | Name | Email | Password |
 |------|------|-------|----------|
-| Admin | Admin User | admin@intimetec.com | demo123 |
-| HR Head | Khushbu Jain | hr@intimetec.com | demo123 |
-| Finance | Tapish Rathore | finance@intimetec.com | demo123 |
-| Marketing | Priya Sharma | marketing@intimetec.com | demo123 |
-| Sales | Amit Gupta | sales@intimetec.com | demo123 |
-| Engineer | Rajeev Kumar | dev@intimetec.com | demo123 |
+| IT Admin | Kuldeep Mathur | kuldeep.mathur@intimetec.com | demo123 |
+| HR | HR Manager | hr@intimetec.com | demo123 |
+| Finance | Finance Manager | finance@intimetec.com | demo123 |
+| Marketing | Marketing Manager | marketing@intimetec.com | demo123 |
+| Client Delivery | Vijaya Arucapalli | vijaya.arucapalli@intimetec.com | demo123 |
+| Engineer | Ritesh Soni | ritesh.soni@intimetec.com | demo123 |
 
 ## Features
 

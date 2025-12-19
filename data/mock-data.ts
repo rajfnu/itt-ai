@@ -4,15 +4,15 @@ import { User, AIAgent, NavItem } from '@/types';
 export const mockUsers: User[] = [
   {
     id: '1',
-    name: 'Admin User',
-    email: 'admin@intimetec.com',
+    name: 'Kuldeep Mathur',
+    email: 'kuldeep.mathur@intimetec.com',
     role: 'admin',
-    department: 'Administration',
+    department: 'IT & Security',
     avatar: '/avatars/admin.png'
   },
   {
     id: '2',
-    name: 'Khushbu Jain',
+    name: 'HR Manager',
     email: 'hr@intimetec.com',
     role: 'hr_staff',
     department: 'Human Resources',
@@ -20,7 +20,7 @@ export const mockUsers: User[] = [
   },
   {
     id: '3',
-    name: 'Tapish Rathore',
+    name: 'Finance Manager',
     email: 'finance@intimetec.com',
     role: 'finance_staff',
     department: 'Finance',
@@ -28,15 +28,15 @@ export const mockUsers: User[] = [
   },
   {
     id: '4',
-    name: 'Rajeev Kumar',
-    email: 'dev@intimetec.com',
+    name: 'Ritesh Soni',
+    email: 'ritesh.soni@intimetec.com',
     role: 'engineer',
     department: 'Engineering',
     avatar: '/avatars/dev.png'
   },
   {
     id: '5',
-    name: 'Priya Sharma',
+    name: 'Marketing Manager',
     email: 'marketing@intimetec.com',
     role: 'marketing_staff',
     department: 'Marketing',
@@ -44,36 +44,77 @@ export const mockUsers: User[] = [
   },
   {
     id: '6',
-    name: 'Amit Gupta',
-    email: 'sales@intimetec.com',
+    name: 'Vijaya Arucapalli',
+    email: 'vijaya.arucapalli@intimetec.com',
     role: 'sales_staff',
-    department: 'Sales',
+    department: 'Client Delivery',
     avatar: '/avatars/sales.png'
   },
   // C-Level Executives - InTimeTec Leadership
   {
     id: '7',
     name: 'Jeet Kumar',
-    email: 'ceo@intimetec.com',
+    email: 'jeet.kumar@intimetec.com',
     role: 'ceo',
     department: 'Executive',
     avatar: '/avatars/ceo.png'
   },
   {
     id: '8',
-    name: 'Rakesh Gupta',
-    email: 'cio@intimetec.com',
+    name: 'Rakesh Sawan',
+    email: 'rakesh.sawan@intimetec.com',
     role: 'cio',
     department: 'Executive',
-    avatar: '/avatars/cio.png'
+    avatar: '/avatars/cto.png'
   },
   {
     id: '9',
-    name: 'Tapish Rathore',
-    email: 'cfo@intimetec.com',
+    name: 'Sandeep Jain',
+    email: 'sandeep.jain@intimetec.com',
     role: 'coo',
     department: 'Executive',
-    avatar: '/avatars/cfo.png'
+    avatar: '/avatars/md.png'
+  },
+  // Additional Executives
+  {
+    id: '10',
+    name: 'Dan Puga',
+    email: 'dan.puga@intimetec.com',
+    role: 'ceo',
+    department: 'Executive',
+    avatar: '/avatars/evp.png'
+  },
+  {
+    id: '11',
+    name: 'Matt Fratzke',
+    email: 'matt.fratzke@intimetec.com',
+    role: 'coo',
+    department: 'Executive',
+    avatar: '/avatars/evp.png'
+  },
+  {
+    id: '12',
+    name: 'Cody Erben',
+    email: 'cody.erben@intimetec.com',
+    role: 'cio',
+    department: 'Technology',
+    avatar: '/avatars/vp.png'
+  },
+  {
+    id: '13',
+    name: 'Rajeev Kumar',
+    email: 'rajeev.kumar@intimetec.com',
+    role: 'cio',
+    department: 'ANZ',
+    avatar: '/avatars/cto.png'
+  },
+  {
+    id: '14',
+    name: 'Venkatesh Bachu',
+    email: 'venkatesh.bachu@intimetec.com',
+    role: 'coo',
+    department: 'ANZ',
+    avatar: '/avatars/md.png'
   },
 ];
 
